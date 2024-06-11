@@ -1,0 +1,13 @@
+main {
+  align-items: center;
+  justify-content: center;
+}
+
+nav,
+footer {
+  display: flex;
+}
+
+main {
+  display: grid;
+}
