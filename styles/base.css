@@ -173,3 +173,7 @@ figcaption {
   text-align: center;
   font-style: italic;
 }
+
+#location-title {
+  color: black;
+}
