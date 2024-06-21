@@ -69,10 +69,9 @@ h1.open {
   display: none;
 }
 
-main {
+.grid {
   display: grid;
   grid-template-columns: 1fr;
-  flex-grow: auto;
   width: 80%; /* Set a width for the element */
   margin: 0 auto;
 }

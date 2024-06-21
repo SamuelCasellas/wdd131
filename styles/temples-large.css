@@ -1,7 +1,7 @@
 /* large view navigation ************************************/
 
 @media (min-width: 41.5em) {
-  main {
+  .grid {
     display: flex;
     flex-wrap: wrap;
   }
