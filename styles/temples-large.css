@@ -1,0 +1,30 @@
+/* large view navigation ************************************/
+
+@media (min-width: 41.5em) {
+  main {
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  figure {
+    flex: 1 0 200px;
+    padding: 1rem;
+  }
+
+  #hamburger {
+    display: none;
+    /* hide hamburger button */
+  }
+
+  .navigation {
+    display: flex;
+    justify-content: end;
+    width: 65%;
+    padding-left: 35%;
+  }
+
+  .navigation a {
+    display: block;
+    color: #fff;
+  }
+}

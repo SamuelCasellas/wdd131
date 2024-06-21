@@ -1,0 +1,110 @@
+/* Colors */
+:root {
+  --primary-color: rgb(3, 71, 153);
+  --secondary-color: #2a3238;
+  --hover-color: rgb(26, 192, 23);
+}
+
+* {
+  font-family: "Roboto", sans-serif;
+}
+
+#hamburger::before {
+  content: "☰";
+  color: white;
+  position: absolute;
+  top: 2.75rem;
+}
+
+#hamburger.open::before {
+  content: "❎";
+  position: absolute;
+  top: 2.75rem;
+}
+
+/* small view navigation */
+#hamburger {
+  font-size: 1.5rem;
+  border: 0;
+  background: none;
+  color: #000;
+  margin-left: 92%;
+}
+
+.navigation a {
+  display: none;
+  padding: 1rem;
+  text-align: center;
+}
+
+/* when the button is clicked - the open class is toggled (added/removed) */
+.open a {
+  display: block;
+}
+
+header {
+  background: var(--primary-color);
+  color: white;
+  position: relative;
+  min-height: 150px;
+  display: flex;
+  align-items: center;
+}
+
+header.open {
+  display: block;
+}
+
+h1 {
+  position: absolute;
+  margin-left: 20px;
+  display: block;
+}
+
+h2 {
+  text-align: center;
+}
+
+h1.open {
+  display: none;
+}
+
+main {
+  display: grid;
+  grid-template-columns: 1fr;
+  flex-grow: auto;
+  width: 80%; /* Set a width for the element */
+  margin: 0 auto;
+}
+
+
+img {
+  max-width: 100%;
+  /* min-width: 20%; */
+  height: auto;
+  /* width: 40%; */
+}
+
+nav {
+  display: block;
+  /* justify-content: end; */
+}
+
+a {
+  color: white;
+  text-decoration: none;
+}
+
+a:hover {
+  text-decoration: underline;
+  color: var(--hover-color)
+}
+
+footer {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  background-color: var(--primary-color);
+  color: white;
+}
