@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Place</title>
+  <meta name="description" content="WDD 131 - Dynamic Web Fundamentals. Home page for Samuel Casellas.">
+  <meta name="author" content="Samuel Casellas">
+  <link rel="stylesheet" href="styles/place.css">
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,900&display=swap" rel="stylesheet">
+
+  <script defer src="scripts/place.js"></script>
+  <script defer src="scripts/getdates.js"></script>
+</head>
+
+<body>
+
+  <header>
+    <h1>Place Title</h1>
+  </header>
+
+  <main>
+    <picture>
+      <source srcset="images/hero-large.webp" media="(min-width: 1000px)">
+      <source srcset="images/hero-medium.webp" media="(min-width: 500px)">
+      <img src="images/hero-small.webp" alt="temple" width="500" height="250">
+    </picture>
+
+    <div class="data">
+      <h2>Data</h2>
+      <span><strong>Area: </strong></span>
+      <span><strong>Population: </strong></span>
+      <span><strong>Capital: </strong></span>
+      <span><strong>Languages: </strong></span>
+      <span><strong>Currency: </strong></span>
+      <span><strong>Time Zone: </strong></span>
+      <span><strong>CallingCode: </strong></span>
+      <span><strong>Internet TLD: </strong></span>
+    </div>
+    <div class="weather">
+      <h2>Weather</h2>
+      <br>
+      <img src="" alt="" />
+    </div>
+
+  </main>
+
+  <footer>
+    <noscript>Please enable JavaScript to display last moficiation date.</noscript>
+    <span id="currentyear"></span>
+    <span id="lastmodified"></span>
+  </footer>
+</body>
+
+</html>
