@@ -4,10 +4,13 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Place</title>
-  <meta name="description" content="WDD 131 - Dynamic Web Fundamentals. Home page for Samuel Casellas.">
+  <title>Cameroon</title>
+  <meta name="Interesting location that Samuel would like to see, along with one of its unique animals">
   <meta name="author" content="Samuel Casellas">
+  <link rel="stylesheet" href="styles/colors.css">
   <link rel="stylesheet" href="styles/place.css">
+  <link rel="stylesheet" href="styles/large-place.css">
+  <link rel="stylesheet" href="styles/small-place.css">
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,31 +23,59 @@
 <body>
 
   <header>
-    <h1>Place Title</h1>
+    <h1>Cameroon</h1>
   </header>
 
   <main>
     <picture>
-      <source srcset="images/hero-large.webp" media="(min-width: 1000px)">
-      <source srcset="images/hero-medium.webp" media="(min-width: 500px)">
-      <img src="images/hero-small.webp" alt="temple" width="500" height="250">
+      <source srcset="images/okapi-large.webp" media="(min-width: 850px)">
+      <img src="images/okapi-small.webp" alt="temple" width="auto" height="300">
     </picture>
 
     <div class="data">
       <h2>Data</h2>
-      <span><strong>Area: </strong></span>
-      <span><strong>Population: </strong></span>
-      <span><strong>Capital: </strong></span>
-      <span><strong>Languages: </strong></span>
-      <span><strong>Currency: </strong></span>
-      <span><strong>Time Zone: </strong></span>
-      <span><strong>CallingCode: </strong></span>
-      <span><strong>Internet TLD: </strong></span>
+      <div class="flex">
+        <div class="labels">
+          <span><strong>Area: </strong></span>
+          <span><strong>Population: </strong></span>
+          <span><strong>Capital: </strong></span>
+          <span><strong>Languages: </strong></span>
+          <span><strong>Currency: </strong></span>
+          <span><strong>Time Zone: </strong></span>
+          <span><strong>CallingCode: </strong></span>
+          <span><strong>Internet TLD: </strong></span>
+        </div>
+        <div class="values">
+          <span>475,440 sq km</span>
+          <span>27,334,000</span>
+          <span>Yaoundé</span>
+          <span>French, English</span>
+          <span>Central African CFA franc</span>
+          <span>UTC+1</span>
+          <span>+237</span>
+          <span>.cm</span>
+        </div>
+      </div>
     </div>
+    <div id="divider"></div>
     <div class="weather">
       <h2>Weather</h2>
-      <br>
-      <img src="" alt="" />
+      <img class="svg" src="images/1530392_weather_sun_sunny_temperature_icon.svg" alt="Your SVG Image" width="200"
+        height="auto">
+        <div class="flex">
+          <div class="labels">
+            <span><strong>Temperature: </strong></span>
+            <span><strong>Conditions: </strong></span>
+            <span><strong>Wind: </strong></span>
+            <span><strong>Wind Chill: </strong></span>
+          </div>
+          <div class="values">
+            <span id="temp"></span>
+            <span>Sunny</span>
+            <span id="wind-speed"></span>
+            <span id="wind-chill"></span>
+          </div>
+        </div>
     </div>
 
   </main>

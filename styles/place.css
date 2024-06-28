@@ -1,4 +1,93 @@
+@import 'colors.css';
+
+body {
+	font-family: Roboto, helvetica, sans-serif;
+}
+
+body {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+}
+
+header {
+  color: white;
+  background-color: var(--primary-color);
+  padding: 15px;
+  text-align: center;
+  position: relative;
+}
+
+picture {
+  position: relative;
+}
+
+header::after, picture::after {
+  content: ""; /* Add this line */
+  position: absolute; /* Add this line */
+  left: 0; /* Add this line */
+  bottom: 0; /* Add this line */
+  width: 100%; /* Add this line */
+  height: 10px; /* Adjust the height as needed */
+  background-color: var(--secondary-color);
+}
+
+
+picture::after {
+  height: 5px; /* Adjust the height as needed */
+}
+
 span {
   display: block;
 }
 
+.flex {
+  display: flex;
+  justify-content: center;  /* Center text */
+}
+
+.labels span {
+  text-align: right;
+}
+
+.values {
+  margin-left: 1rem;
+}
+
+.values span {
+  text-align: left;
+}
+
+h2 {
+  width: 100%;
+  text-align: center;
+}
+
+span {
+  text-align: center;
+}
+
+.weather {
+  justify-content: center;
+}
+
+div {
+  padding-bottom: 10px;
+}
+
+.svg {
+  position: relative;
+  left: 42%;
+  display: block;
+  height: 100px;
+  width: auto;
+}
+
+footer > span {
+  background-color: var(--secondary-color);
+  text-align: center;
+  padding: 10px;
+}
