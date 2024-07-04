@@ -1,0 +1,126 @@
+<!-- courses.html -->
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Courses and sections</title>
+</head>
+
+<body>
+  <h1 id="courseName"></h1>
+  <h2 id="courseCode"></h2>
+  <label for="sectionNumber">Section Number</label>
+  <input id="sectionNumber" />
+  <button id="enrollStudent">Enroll Student</button>
+  <button id="dropStudent">Drop Student</button>
+
+  <table>
+    <thead>
+      <tr>
+        <th>Section#</th>
+        <th>Room#</th>
+        <th>#Enrolled</th>
+        <th>Days</th>
+        <th>Instructor</th>
+      </tr>
+    </thead>
+    <tbody id="sections"></tbody>
+  </table>
+
+
+  <script>
+    // courses.js
+
+    const aCourse = {
+      code: "CSE121b",
+      name: "Javascript Language",
+      sections: [{ sectionNum: 1, roomNum: 'STC 353', enrolled: 26, days: 'TTh', instructor: 'Bro T' },
+      { sectionNum: 2, roomNum: 'STC 347', enrolled: 28, days: 'TTh', instructor: 'Sis A' }]
+    };
+
+    function zip(...arrays) {
+      return arrays[0].reduce((acc, _, i) => {
+        acc.push(arrays.map(array => array[i]));
+        return acc;
+      }, []);
+    }
+
+    function createSections(sectionData) {
+      let tableRows = []
+      let tableRowsData = [];
+
+      let numRows = document.querySelector('thead').firstElementChild.childElementCount;
+
+      for (let course of sectionData) {
+        tableRows.push(document.createElement('tr'));
+        let data = [];
+        for (let value of Object.values(course)) {
+          tableData = document.createElement('td');
+          tableData.textContent = value;
+          data.push(tableData);
+        }
+        tableRowsData.push(data);
+      }
+
+      return [tableRows, tableRowsData];
+    }
+
+    function clearSections() {
+      const sectionInfo = document.getElementById('sections');
+      while (sectionInfo.hasChildNodes()) {
+        sectionInfo.removeChild(sectionInfo.firstChild);
+      }
+    }
+
+    function addSections(tableRows, tableData) {
+      const sectionInfo = document.getElementById('sections');
+      for (let [tr, tds] of zip(tableRows, tableData)) {
+        for (let t of tds) {
+          tr.appendChild(t);
+        }
+        sectionInfo.appendChild(tr);
+      }
+    }
+
+    function updateTable() {
+      clearSections();
+      let [tableRows, tableRowsData] = createSections(aCourse.sections);
+      addSections(tableRows, tableRowsData);
+    }
+
+    // init
+    updateTable();
+
+    aCourse.enrollStudent = function (sectionNum) {
+      // const courseNum
+      let course = aCourse.sections.find(s => s.sectionNum === sectionNum);
+      if (!course) return;
+      course.enrolled++;
+      updateTable();
+    }
+
+    aCourse.dropStudent = function (sectionNum) {
+      // const courseNum
+      let course = aCourse.sections.find(s => s.sectionNum === sectionNum);
+      if (!course) return;
+      course.enrolled--;
+      updateTable();
+    }
+
+    document.getElementById('enrollStudent').addEventListener('click', () => {
+      const sectionNum = +document.getElementById('sectionNumber').value;
+      aCourse.enrollStudent(sectionNum);
+    });
+
+    document.getElementById('dropStudent').addEventListener('click', () => {
+      const sectionNum = +document.getElementById('sectionNumber').value;
+      aCourse.dropStudent(sectionNum);
+    });
+
+  </script>
+</body>
+
+</html>
