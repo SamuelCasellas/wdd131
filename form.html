@@ -9,8 +9,7 @@
   <meta name="description" content="Form for posting reviews for a product">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght,bold@0,300;1,900;&display=swap"
-    rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,900;&display=swap" rel="stylesheet">
 
   <link rel="stylesheet" href="styles/colors-form.css">
   <link rel="stylesheet" href="styles/form.css">
@@ -24,31 +23,26 @@
 
   <header>
     <h1>Product Review</h1>
-    <h5></h5>
+    <span>Number of reviews submitted: 0</span>
   </header>
 
   <form method="get" action="review.html">
-    <label class="label-header">Product Name</label>
+    <label class="label-header" for="product-name">Product Name</label>
     <select name="product-name" id="product-name" required>
       <option value="" disabled selected>Select a Product ...</option>
     </select>
     <label class="label-header">Overall Rating</label>
     <fieldset name="rating">
       <div class="rating">
-        <label class="star-rating">
-          <div>☆</div><input type="radio" id="rating1" name="rating" value="1" required>
+        <label class="star-rating">☆<br><input type="radio" id="rating1" name="rating" value="1" required>
         </label>
-        <label class="star-rating">
-          <div>☆☆</div><input type="radio" id="rating2" name="rating" value="2" required>
+        <label class="star-rating">☆☆<br><input type="radio" id="rating2" name="rating" value="2" required>
         </label>
-        <label class="star-rating">
-          <div>☆☆☆</div><input type="radio" id="rating3" name="rating" value="3" required>
+        <label class="star-rating">☆☆☆<br><input type="radio" id="rating3" name="rating" value="3" required>
         </label>
-        <label class="star-rating">
-          <div>☆☆☆☆</div><input type="radio" id="rating4" name="rating" value="4" required>
+        <label class="star-rating">☆☆☆☆<br><input type="radio" id="rating4" name="rating" value="4" required>
         </label>
-        <label class="star-rating">
-          <div>☆☆☆☆☆</div><input type="radio" id="rating5" name="rating" value="5" required>
+        <label class="star-rating">☆☆☆☆☆<br><input type="radio" id="rating5" name="rating" value="5" required>
         </label>
       </div>
     </fieldset>

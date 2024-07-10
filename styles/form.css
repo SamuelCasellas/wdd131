@@ -10,10 +10,6 @@ img {
   height: 100%;
 }
 
-.star-rating>div:nth-child(odd) {
-  margin-left: 2px;
-}
-
 header {
   color: white;
   background-color: var(--primary-color);
@@ -47,6 +43,7 @@ picture::after {
 
 span {
   display: block;
+  margin-bottom: 15px;
 }
 
 .rating {
@@ -65,21 +62,25 @@ label {
 input[type="radio"],
 input[type="checkbox"] {
   transform: scale(2.0);
-  -webkit-transform: scale(2.0);
-  -moz-transform: scale(2.0);
-  -ms-transform: scale(2.0);
-  -o-transform: scale(2.0);
+}
+
+input[type="checkbox"] {
+  margin-right: 12px;
+}
+
+input[type="radio"] {
+  margin-top: 12px;
 }
 
 select,
 textarea,
-#name {
+#name,
+input[type="submit"] {
   width: 90%;
   max-width: 500px;
 }
 
 fieldset {
-  padding: 0;
   border: none;
 }
 

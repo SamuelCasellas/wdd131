@@ -1,5 +1,5 @@
 const dropDown = document.querySelector('select');
-const numReviews = document.querySelector('h5');
+const numReviews = document.querySelector('span');
 
 const currentNumReviews = JSON.parse(getStorage('review-count') || 0);
 numReviews.textContent = `Number of reviews submitted: ${currentNumReviews}`;
