@@ -1,0 +1,29 @@
+@import 'project-vars.css';
+
+body {
+  font-family: var(--body-text);
+  color: var(--text-color);
+  background-color: var(--background-color);
+}
+
+h1,
+h2,
+h3 {
+  font-family: var(--headings);
+  color: var(--primary-color);
+}
+
+strong {
+  font-family: var(--accents);
+}
+
+a {
+  color: var(--secondary-color);
+}
+
+.content {
+  background-color: #FFFFFF;
+  padding: 20px;
+  margin: 20px;
+  border-radius: 5px;
+}

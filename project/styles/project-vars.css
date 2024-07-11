@@ -1,0 +1,11 @@
+:root {
+  --primary-color: #4A90E2; /* Used for headings, buttons, and accents */
+  --secondary-color: #2ECC71; /* Used for highlights, icons, and secondary buttons */
+  --background-color: #F5F5F5; /* Used for the main background */
+  --text-color: #333333; /* Used for body text */
+
+  --headings: 'Roboto Slab', serif; /* A clean, modern serif font for titles and headings */
+  --body-text: 'Open Sans', sans-serif; /* A highly legible sans-serif font for main content
+  */
+  --accents: 'Montserrat', sans-serif; /* A bold sans-serif font for buttons and call-to-action elements */
+}
