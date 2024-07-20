@@ -8,12 +8,15 @@
   <meta name="author" content="Samuel Casellas">
   <meta name="description" content="Software Portfolio and Professional Career of Samuel Casellas">
 
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
   <link rel="stylesheet" href="styles/project-vars.css">
   <link rel="stylesheet" href="styles/project-dark-theme.css">
   <link rel="stylesheet" href="styles/project.css">
   <link rel="stylesheet" href="styles/project-small.css">
   <link rel="stylesheet" href="styles/project-large.css">
   <link rel="stylesheet" href="styles/form.css">
+  <link rel="stylesheet" href="styles/modal.css">
 
   <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -24,10 +27,41 @@
   <script defer src="scripts/projectData.js"></script>
   <script defer src="scripts/fadeIn.js"></script>
   <script defer src="scripts/hamburger.js"></script>
+  <script defer src="scripts/modal.js"></script>
 </head>
 
 <body class="theme">
   <noscript>Please enable JavaScript if you want to see my cool effects!</noscript>
+
+  <div class="overlay">
+    <div class="modal">
+      <h2>Thank You!</h2>
+      <p>Your details has been successfully submitted. Thanks!</p>
+      <button type="button" id="close-modal">OK</button>
+    </div>
+  </div>
+
+  <!-- <div class="modal fade" id="successModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog" role="document">
+      <div class="modal-content">
+        <div class="modal-header">
+          <h5 class="modal-title" id="exampleModalLabel">Submission Successful</h5>
+          <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+            <span aria-hidden="true">&times;</span>
+          </button>
+        </div>
+        <div class="modal-body">
+          Your information has been submitted successfully!
+        </div>
+        <div class="modal-footer">
+          <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+        </div>
+      </div>
+    </div>
+  </div> -->
+
+  </button>
   <header>
     <h1>Samuel Casellas</h1>
     <button id="hamburger"></button>
@@ -43,12 +77,11 @@
     </div>
   </header>
   <main>
-
     <section id="intro">
-      <img class="icon" id="hero-img" src="images/hero_img.png"
+      <img class="icon fade-in" id="hero-img" src="images/hero_img.png"
         alt="Samuel Casellas folding his arms with a motivated look." />
 
-      <div class="icons">
+      <div class="icons fade-in-2">
         <figure>
           <svg id="engineer" height="1792" viewBox="0 0 1792 1792" width="1792" xmlns="http://www.w3.org/2000/svg">
             <style>
@@ -56,7 +89,7 @@
                 fill: #000000
               }
 
-              .engineering.dark {
+              .dark .engineering {
                 fill: #FFFFFF;
               }
             </style>
@@ -77,7 +110,7 @@
                 fill: #000000
               }
 
-              .testing.dark {
+              .dark .testing {
                 fill: #FFFFFF;
               }
             </style>
@@ -140,87 +173,83 @@
           <figcaption>Entrepreneur</figcaption>
         </figure>
       </div>
+    </section>
 
-      <div>
+    <section class="fade-in" id="summary">
+      <div class="card">
         <h2>Executive Summary</h2>
-        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est temporibus quasi harum ut sunt vero dignissimos
+        <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Est temporibus quasi harum ut sunt vero
+          dignissimos
           hic ducimus eaque illo. Accusamus dolores sunt cum ab adipisci itaque labore rem fugiat?</p>
       </div>
-      <div>
+      <div class="card">
         <h2>Background Info</h2>
         <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Delectus asperiores consectetur natus est optio
           praesentium, alias quidem. Minus autem explicabo, molestias fuga, ipsam eum dolorum cumque, cum nesciunt
           maxime et?</p>
       </div>
-      <div></div>
     </section>
 
-    <section id="projects">
+    <section class="fade-in" id="projects">
       <h1>Projects</h1>
-      <div class="card fade-in">
-        <figure>
-          <img style="height: 350px; width: 325px;" src="../images/temple.png" alt="Image of a temple">
-          <figcaption>San Diego California</figcaption>
-        </figure>
-        <div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae sint praesentium, quaerat tenetur
-            consequuntur voluptatibus omnis. Vel magni dolores vero, hic obcaecati reprehenderit quam ut beatae minus
-            aliquid incidunt.</p>
-          <ul>
-            <li>Lorem ipsum dolor sit</li>
-            <li>Lorem ipsum dolor sit</li>
-            <li>Lorem ipsum dolor sit</li>
-            <li>Lorem ipsum dolor sit</li>
-          </ul>
+      <div>
+        <div class="card fade-in">
+          <figure>
+            <img style="height: 350px; width: 325px;" src="../images/temple.png" alt="Image of a temple">
+            <figcaption>San Diego California</figcaption>
+          </figure>
+          <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae sint praesentium, quaerat tenetur
+              consequuntur voluptatibus omnis. Vel magni dolores vero, hic obcaecati reprehenderit quam ut beatae minus
+              aliquid incidunt.</p>
+            <ul>
+              <li>Lorem ipsum dolor sit</li>
+              <li>Lorem ipsum dolor sit</li>
+              <li>Lorem ipsum dolor sit</li>
+              <li>Lorem ipsum dolor sit</li>
+            </ul>
+          </div>
         </div>
-      </div>
 
-      <div class="card fade-in">
-        <div>
-          <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae sint praesentium, quaerat tenetur
-            consequuntur voluptatibus omnis. Vel magni dolores vero, hic obcaecati reprehenderit quam ut beatae minus
-            aliquid incidunt.</p>
-          <ul>
-            <li>Lorem ipsum dolor sit</li>
-            <li>Lorem ipsum dolor sit</li>
-            <li>Lorem ipsum dolor sit</li>
-            <li>Lorem ipsum dolor sit</li>
-          </ul>
+        <div class="card fade-in">
+          <div>
+            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae sint praesentium, quaerat tenetur
+              consequuntur voluptatibus omnis. Vel magni dolores vero, hic obcaecati reprehenderit quam ut beatae minus
+              aliquid incidunt.</p>
+            <ul>
+              <li>Lorem ipsum dolor sit</li>
+              <li>Lorem ipsum dolor sit</li>
+              <li>Lorem ipsum dolor sit</li>
+              <li>Lorem ipsum dolor sit</li>
+            </ul>
+          </div>
+          <figure>
+            <img style="height: 350px; width: 325px;" src="../images/temple.png" alt="Image of a temple">
+            <figcaption>San Diego California</figcaption>
+          </figure>
         </div>
-        <figure>
-          <img style="height: 350px; width: 325px;" src="../images/temple.png" alt="Image of a temple">
-          <figcaption>San Diego California</figcaption>
-        </figure>
       </div>
     </section>
 
-    <section>
-      <h1>Contact Me</h1>
+    <section id="contact">
+      <h1 class="fade-in">Contact Me</h1>
 
-      <form method="get" action="review.html">
-        <label class="label-header" for="name">Name *</label>
+      <form id="myForm" class="fade-in" method="get">
+        <label class="label-header" for="visitor-name">Name *</label>
         <input name="name" type="text" id="visitor-name" required>
 
-        <label class="label-header" for="company">Company</label>
-        <input name="company" type="text" id="company-name" required>
+        <label class="label-header" for="company-name">Company</label>
+        <input name="company" type="text" id="company-name">
 
-        <label class="label-header" for="email">Email</label>
-        <input name="email" type="email" id="visitor-email" required>
+        <label class="label-header" for="visitor-email">Email</label>
+        <input name="email" type="email" id="visitor-email">
 
-        <label class="label-header">Company<input name="company" type="text"></label>
-        <label class="label-header">Email<input name="linkedin" type="url"></label>
-        <textarea id="inquiry" name="inquiry"></textarea>
-        <label class="label-header">Inquiry<input name="email" type="email"></label>
-        <select name="product-name" id="product-name" required>
-          <option value="" disabled selected>Select a Product ...</option>
-        </select>
-        <label class="label-header">Overall Rating</label>
-
-
-        <label class="label-header optional" for="written-review">Written Review</label>
+        <label class="label-header" for="inquiry">Inquiry</label>
+        <textarea id="inquiry" name="inquiry" required></textarea>
 
         <br>
-        <input type="submit" value="Send">
+        <!-- <input type="submit" id="submit-form" value="Send"> -->
+        <button type="submit" class="btn btn-primary">Submit</button>
       </form>
     </section>
   </main>
@@ -229,6 +258,44 @@
     <a href="">GitHub</a>
     <a href="">X</a>
   </footer>
+
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+  <script>
+    $(document).ready(function () {
+      // alert('few')
+      $('#myForm').on('submit', function (event) {
+        event.preventDefault(); // Prevent the default form submission
+
+        // Get form data
+        const formData = {
+          name: $('#name').val(),
+          company: $('#company-name').val(),
+          email: $('#visitor-email').val(),
+          inquiry: $('#inquiry').val(),
+        };
+
+        // Send data to the server using AJAX
+        $.ajax({
+          type: 'POST',
+          url: 'your-server-endpoint', // Replace with your server endpoint
+          data: formData,
+          success: function (response) {
+            // Handle success response
+            // $('#successModal').modal('show'); // Show the modal
+            console.log('Success!');
+          },
+          error: function () {
+            // Handle error response
+            // alert('There was an error submitting the form.');
+            console.log('hello', openPopup);
+            openPopup();
+          }
+        });
+      });
+    });
+  </script>
 
 </body>
 

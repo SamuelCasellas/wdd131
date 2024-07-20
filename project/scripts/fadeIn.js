@@ -1,4 +1,5 @@
-const fadeElements = document.querySelectorAll('.fade-in');
+const fadeElements = Array.from(document.querySelectorAll('.fade-in'))
+  .concat(Array.from(document.querySelectorAll('.fade-in-2')));
 
 const observer = new IntersectionObserver(entries => {
   entries.forEach(entry => {

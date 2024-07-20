@@ -13,7 +13,8 @@ const themeToggler = document.getElementById('theme-toggler');
 // Initial setting
 if (currentTheme === 'night') {
   themeToggler.setAttribute('src', buttons.night);
-  document.querySelectorAll('.theme').forEach(el => el.classList.add('dark'));
+  document.body.classList.add('dark');
+  // document.querySelectorAll('.theme').forEach(el => el.classList.add('dark'));
 } else {
   themeToggler.setAttribute('src', buttons.day);
 }
@@ -21,11 +22,13 @@ if (currentTheme === 'night') {
 themeToggler.addEventListener('click', () => {
   if (themeToggler.getAttribute('src').includes('sun')) {
     transitionDarkModeIcon(buttons.night);
-    document.querySelectorAll('.theme').forEach(el => el.classList.add('dark'));
+    document.body.classList.add('dark');
+    // document.querySelectorAll('.theme').forEach(el => el.classList.add('dark'));
     setStorage('theme', 'night');
   } else {
     transitionDarkModeIcon(buttons.day);
-    document.querySelectorAll('.theme').forEach(el => el.classList.remove('dark'));
+    document.body.classList.remove('dark');
+    // document.querySelectorAll('.theme').forEach(el => el.classList.remove('dark'));
     setStorage('theme', 'day');
   }
 });
