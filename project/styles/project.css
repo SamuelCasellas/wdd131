@@ -2,7 +2,7 @@
 
 .theme {
   transition: 0.5s ease-in-out;
-  /* transition-property: color;   */
+  /* transition-property: color; */
 }
 
 noscript {
@@ -20,12 +20,25 @@ body {
 
 header {
   background-color: var(--side-bar-color) !important;
-  width: 100%;
-  height: 6em;
+  height: 3em;
   display: flex;
   align-items: center;
   justify-content: space-between;
   border-bottom: 1px solid lightgray;
+
+  position: fixed !important;
+  top: 0;
+  left: 0;
+  width: 100%;
+  z-index: 1000;
+  transition: background-color 0.3s ease;
+}
+
+header.scrolled {
+  background-color: #fff;
+  /* Change the header's background color on scroll */
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  /* Add a subtle shadow */
 }
 
 #day-transition-container {
@@ -82,22 +95,21 @@ header {
 
 #hamburger::before {
   content: "☰";
-  color: rgb(255, 0, 0);
+  color: #FFF;
   position: absolute;
   margin-left: -25px;
-  top: 2.20rem;
+  top: 1.40rem;
 }
 
 #hamburger.open::before {
   content: "❎";
   position: absolute;
-  top: 2.20rem;
+  top: 1.40rem;
 }
 
-header>h1 {
-  margin-left: 15px;
-  width: 30%;
+h1 {
   text-wrap: nowrap;
+  text-align: center;
 }
 
 header>h1:hover {
@@ -176,12 +188,12 @@ strong {
 #summary {
   display: flex;
   width: 80%;
-  margin: 0 auto;
+  margin: 3rem auto;
 }
 
-
 section {
-  margin: 2rem;
+  margin: 6rem 2rem;
+  scroll-margin-top: 6rem;
 }
 
 section#intro {
@@ -189,7 +201,7 @@ section#intro {
   display: flex;
   flex-direction: column;
   width: 80%;
-  margin: 5rem auto;
+  margin: 6rem auto;
   align-items: center;
   justify-content: center;
 }
@@ -197,8 +209,6 @@ section#intro {
 #hero-img {
   width: 350px;
   height: auto;
-  /* position: relative;
-  align-self: center; */
   animation: pulse 2.5s ease-in-out infinite;
 }
 
@@ -208,7 +218,7 @@ section#intro {
   }
 
   50% {
-    transform: scale(1.05);
+    transform: scale(1.04);
   }
 
   100% {
@@ -218,7 +228,6 @@ section#intro {
 
 .icons {
   display: flex;
-  justify-content: space-between  ;
 }
 
 figure {
@@ -264,41 +273,59 @@ svg {
   border-radius: 5px;
 }
 
-section#projects>div {
+section#projects>.grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 1rem;
-  margin: 2rem 2rem;
+  grid-template-columns: repeat(auto-fit, minmax(500px, 1fr));
+  grid-auto-flow: row;
+  gap: 2.5rem;
+  margin: 2rem 0.5rem;
+
   /* grid-row-end: 10px; */
 }
 
 .card {
   display: flex;
   padding: 10px;
-  border: 1px solid black;
+  border: 1px solid rgb(92, 92, 92);
   border-radius: 30px;
+  box-shadow: 0 2px 4px rgba(70, 67, 67, 0.7);
+  /* Add a subtle shadow */
+  /* width: 500px; */
+  /* width: fit-content; */
+  /* min-width: 500px; */
+  height: fit-content;
+}
+
+.card>figure {
+  min-width: 200px;
+  width: 50%;
+  height: auto;
+  max-height: 200px;
 }
 
 #summary>.card {
   display: block;
+  min-width: 200px;
+  height: fit-content;
 }
 
-#summary > .card:first-child {
-  border-radius: 15px 0% 0% 15px !important;
+#summary>.card:first-child {
+  border-radius: 15px 0% 0% 15px;
+  border-right: none;
 }
 
-#summary > .card:last-child {
-  border-radius: 0% 15px 15px 0% !important;
+#summary>.card:last-child {
+  border-radius: 0% 15px 15px 0%;
 }
 
 section#contact {
-  margin: 2rem; 
+  margin: 2rem;
 }
 
 footer {
   display: flex;
   justify-content: space-around;
-  background-color: var(--primary-color);
+  background-color: var(--side-bar-color) !important;
   color: white;
   text-align: center;
   padding: 10px;

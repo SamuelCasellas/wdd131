@@ -1,3 +1,5 @@
+@import url('project-vars.css');
+
 .overlay {
   z-index: 10;
   position: fixed; /* Fixed positioning to stay in the viewport */
@@ -15,10 +17,17 @@
 }
 
 .modal {
-  background-color: white;
+  color: var(--text-color);
+  background-color: var(--side-bar-color);
   padding: 20px;
   border-radius: 5px;
+  text-align: center;
   box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.modal>img {
+  height: 100px;
+  width: auto;
 }
 
 .open {

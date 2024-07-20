@@ -22,22 +22,34 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,900&display=swap" rel="stylesheet"> -->
 
+  
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
   <script defer src="scripts/localStorageUtils.js"></script>
   <script defer src="scripts/theme.js"></script>
   <script defer src="scripts/projectData.js"></script>
   <script defer src="scripts/fadeIn.js"></script>
   <script defer src="scripts/hamburger.js"></script>
   <script defer src="scripts/modal.js"></script>
+  <script defer src="scripts/scroll.js"></script>
+  <script defer src="scripts/form.js"></script>
 </head>
 
 <body class="theme">
   <noscript>Please enable JavaScript if you want to see my cool effects!</noscript>
 
   <div class="overlay">
-    <div class="modal">
+    <div class="modal theme">
+      <img src="images/check.svg"
+        alt="A check mark, verifying the form was successfully sent. Author: https://www.iconfinder.com/paomedia. License: http://creativecommons.org/licenses/by/3.0/" />
+
       <h2>Thank You!</h2>
-      <p>Your details has been successfully submitted. Thanks!</p>
-      <button type="button" id="close-modal">OK</button>
+      <p>Your comments have
+        been sent! Samuel will
+        reach out to you shortly.</p>
+      <button type="button" class="form-button" id="close-modal">OK</button>
     </div>
   </div>
 
@@ -67,9 +79,9 @@
     <button id="hamburger"></button>
     <div class="theme user-buttons">
       <nav>
-        <a href="#" title="Home" class="active">Home</a>
-        <a href="#" title="Projects">Projects</a>
-        <a href="#" title="Contact Me">Contact Me</a>
+        <a href="#intro" title="Home" class="active">Home</a>
+        <a href="#projects" title="Projects">Projects</a>
+        <a href="#contact" title="Contact Me">Contact Me</a>
       </nav>
       <div id="day-transition-container">
         <img id="theme-toggler" src="images/sun.svg" alt="graphical image of a sun" width="75" height="75">
@@ -190,46 +202,16 @@
       </div>
     </section>
 
+    <hr>
+
     <section class="fade-in" id="projects">
       <h1>Projects</h1>
-      <div>
-        <div class="card fade-in">
-          <figure>
-            <img style="height: 350px; width: 325px;" src="../images/temple.png" alt="Image of a temple">
-            <figcaption>San Diego California</figcaption>
-          </figure>
-          <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae sint praesentium, quaerat tenetur
-              consequuntur voluptatibus omnis. Vel magni dolores vero, hic obcaecati reprehenderit quam ut beatae minus
-              aliquid incidunt.</p>
-            <ul>
-              <li>Lorem ipsum dolor sit</li>
-              <li>Lorem ipsum dolor sit</li>
-              <li>Lorem ipsum dolor sit</li>
-              <li>Lorem ipsum dolor sit</li>
-            </ul>
-          </div>
-        </div>
-
-        <div class="card fade-in">
-          <div>
-            <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Nesciunt quae sint praesentium, quaerat tenetur
-              consequuntur voluptatibus omnis. Vel magni dolores vero, hic obcaecati reprehenderit quam ut beatae minus
-              aliquid incidunt.</p>
-            <ul>
-              <li>Lorem ipsum dolor sit</li>
-              <li>Lorem ipsum dolor sit</li>
-              <li>Lorem ipsum dolor sit</li>
-              <li>Lorem ipsum dolor sit</li>
-            </ul>
-          </div>
-          <figure>
-            <img style="height: 350px; width: 325px;" src="../images/temple.png" alt="Image of a temple">
-            <figcaption>San Diego California</figcaption>
-          </figure>
-        </div>
+      <div class="grid">
+        <!-- Added with JS -->
       </div>
     </section>
+
+    <hr>
 
     <section id="contact">
       <h1 class="fade-in">Contact Me</h1>
@@ -244,58 +226,22 @@
         <label class="label-header" for="visitor-email">Email</label>
         <input name="email" type="email" id="visitor-email">
 
-        <label class="label-header" for="inquiry">Inquiry</label>
+        <label class="label-header" for="inquiry">Inquiry *</label>
         <textarea id="inquiry" name="inquiry" required></textarea>
 
         <br>
         <!-- <input type="submit" id="submit-form" value="Send"> -->
-        <button type="submit" class="btn btn-primary">Submit</button>
+        <button type="submit" class="form-button">Submit</button>
       </form>
     </section>
   </main>
   <footer>
-    <a href="">LinkedIn</a>
-    <a href="">GitHub</a>
-    <a href="">X</a>
+    <a href="" target="_blank" rel="noreferrer nofollow">LinkedIn</a>
+    <a href="" target="_blank" rel="noreferrer nofollow">GitHub</a>
+    <a href="" target="_blank" rel="noreferrer nofollow">X</a>
   </footer>
 
-  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
   <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
-  <script>
-    $(document).ready(function () {
-      // alert('few')
-      $('#myForm').on('submit', function (event) {
-        event.preventDefault(); // Prevent the default form submission
-
-        // Get form data
-        const formData = {
-          name: $('#name').val(),
-          company: $('#company-name').val(),
-          email: $('#visitor-email').val(),
-          inquiry: $('#inquiry').val(),
-        };
-
-        // Send data to the server using AJAX
-        $.ajax({
-          type: 'POST',
-          url: 'your-server-endpoint', // Replace with your server endpoint
-          data: formData,
-          success: function (response) {
-            // Handle success response
-            // $('#successModal').modal('show'); // Show the modal
-            console.log('Success!');
-          },
-          error: function () {
-            // Handle error response
-            // alert('There was an error submitting the form.');
-            console.log('hello', openPopup);
-            openPopup();
-          }
-        });
-      });
-    });
-  </script>
 
 </body>
 

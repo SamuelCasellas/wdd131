@@ -7,3 +7,6 @@ I will have a homepage that shows an image of me and my name with dynamic moveme
 For local cache, I will also save the user's preferences for a light or dark theme, as well as caching images for reducing load times. Lastly, I will store the users inputs on the form in case the user navigates away from the page or encounters an error.
 
 This is a long-anticipated project and I look forward to implementing it by the end of Week 6!
+
+# Resources
+[Popups with vanilla js](https://www.youtube.com/watch?v=AF6vGYIyV8M)
