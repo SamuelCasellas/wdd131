@@ -1,0 +1,27 @@
+@import url('project-vars.css');
+@media (max-width: 35.5em) {
+  .user-buttons {
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: var(--side-bar-color);
+    transition: right 0.3s ease-in-out;
+    z-index: 1;
+    transition: none;
+  }
+
+  .user-buttons.dark {
+    background-color: var(--side-bar-color-dark);
+  }
+
+  .user-buttons.open {
+    right: 0;
+  }
+
+  main {
+    display: block;
+    place-items: center;
+  }
+}

@@ -3,6 +3,13 @@
   --secondary-color: #0d6532; /* Used for highlights, icons, and secondary buttons */
   --background-color: #F5F5F5; /* Used for the main background */
   --text-color: #333333; /* Used for body text */
+  --side-bar-color: #b1b1b1;
+  
+  --primary-color-dark: #216ec7; /* Used for headings, buttons, and accents */
+  --secondary-color-dark: #0d6532; /* Used for highlights, icons, and secondary buttons */
+  --background-color-dark: #383636; /* Used for the main background */
+  --text-color: #333333; /* Used for body text */
+  --side-bar-color-dark: #9f9f9f;
 
   --headings: 'Roboto Slab', serif; /* A clean, modern serif font for titles and headings */
   --body-text: 'Open Sans', sans-serif; /* A highly legible sans-serif font for main content
