@@ -10,3 +10,4 @@ This is a long-anticipated project and I look forward to implementing it by the 
 
 # Resources
 [Popups with vanilla js](https://www.youtube.com/watch?v=AF6vGYIyV8M)
+[Perplexity help](https://www.perplexity.ai/search/how-to-make-an-image-in-css-os-BJ541xyiS2KCk0Wp17Em1g)

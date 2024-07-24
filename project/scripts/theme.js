@@ -14,7 +14,6 @@ const themeToggler = document.getElementById('theme-toggler');
 if (currentTheme === 'night') {
   themeToggler.setAttribute('src', buttons.night);
   document.body.classList.add('dark');
-  // document.querySelectorAll('.theme').forEach(el => el.classList.add('dark'));
 } else {
   themeToggler.setAttribute('src', buttons.day);
 }
@@ -22,15 +21,12 @@ if (currentTheme === 'night') {
 themeToggler.addEventListener('click', () => {
   if (themeToggler.getAttribute('src').includes('sun')) {
     transitionDarkModeIcon(buttons.night);
-    document.body.classList.add('dark');
-    // document.querySelectorAll('.theme').forEach(el => el.classList.add('dark'));
     setStorage('theme', 'night');
   } else {
     transitionDarkModeIcon(buttons.day);
-    document.body.classList.remove('dark');
-    // document.querySelectorAll('.theme').forEach(el => el.classList.remove('dark'));
     setStorage('theme', 'day');
   }
+  document.body.classList.toggle('dark'); // CSS selector: ".dark  ____""
 });
 
 function transitionDarkModeIcon(newButton) {
@@ -39,22 +35,5 @@ function transitionDarkModeIcon(newButton) {
   setTimeout(() => {
     themeToggler.setAttribute('src', newButton);
     themeToggler.classList.add('orbit-in');
-    // setTimeout(() => {
-    //   themeToggler.classList.remove('orbit-in');
-    // }, 600);
   }, 600);
 }
-
-
-// switch (currentTheme) {
-//   case 'day':
-//     break;
-//   case 'night':
-
-//     break;
-//   default:
-//     console.error('Unknown theme', currentTheme);
-//     break;
-// }
-
-
