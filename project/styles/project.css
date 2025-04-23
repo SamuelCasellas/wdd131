@@ -16,6 +16,9 @@ body {
   font-family: var(--body-text);
   color: var(--text-color);
   background-color: var(--background-color);
+  /* transition-property: color;
+  transition-behavior: allow-discrete; */
+  transition: 0.5s ease-in-out;
 }
 
 header {
@@ -181,6 +184,10 @@ section#intro {
   animation: pulse 2.5s ease-in-out infinite;
 }
 
+#hero-img:hover {
+  animation: none;
+}
+
 @keyframes pulse {
   0% {
     transform: scale(1);
@@ -211,6 +218,24 @@ figure {
 svg {
   height: 75px;
   width: auto;
+}
+
+#entrepreneur:hover {
+  animation: shake 0.2s;
+}
+
+#entrepreneur:hover .lightbulb {
+  fill: #f7ec16;
+}
+
+@keyframes shake {
+  0% { transform: /* translate(1px, 1px) */rotate(-3deg); }
+  10% { transform: /* translate(-1px, -2px)*/ rotate(-3deg); }
+  20% { transform: /* translate(-3px, 0px)*/ rotate(3deg); }
+  30% { transform: /* translate(-3px, 0px) */ rotate(3deg); }
+  40% { transform: /* translate(1px, -1px) */rotate(3deg); }
+  50% { transform: /* translate(-1px, 2px)*/ rotate(3deg); }
+  60% { transform: /* translate(-3px, 1px)*/ rotate(-3deg); }
 }
 
 
