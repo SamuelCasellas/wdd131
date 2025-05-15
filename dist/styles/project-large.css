@@ -1,0 +1,17 @@
+@media (min-width: 38.4em) {
+  .user-buttons {
+    display: flex;
+    align-items: center;
+    width: 75%;
+    display: flex;
+    justify-content: end;
+    transition: none;
+    margin-right: 40px;
+  }
+  
+  #hamburger {
+    display: none;
+  }
+  
+}
+

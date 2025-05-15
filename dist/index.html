@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Samuel Casellas - Software Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="author" content="Samuel Casellas">
+  <meta name="description" content="Software Portfolio and Professional Career of Samuel Casellas">
+
+  <!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+
+  <link rel="stylesheet" href="styles/project-vars.css">
+  <link rel="stylesheet" href="styles/project-dark-theme.css">
+  <link rel="stylesheet" href="styles/project.css">
+  <link rel="stylesheet" href="styles/project-small.css">
+  <link rel="stylesheet" href="styles/project-large.css">
+  <link rel="stylesheet" href="styles/form.css">
+  <link rel="stylesheet" href="styles/modal.css">
+
+  <!-- <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,300;1,900&display=swap" rel="stylesheet"> -->
+
+
+  <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"></script>
+  <!-- jQuery -->
+  <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+
+  <script defer src="scripts/localStorageUtils.js"></script>
+  <script defer src="scripts/theme.js"></script>
+  <script defer src="scripts/projectData.js"></script>
+  <script defer src="scripts/fadeIn.js"></script>
+  <script defer src="scripts/hamburger.js"></script>
+  <script defer src="scripts/modal.js"></script>
+  <script defer src="scripts/scroll.js"></script>
+  <script defer src="scripts/form.js"></script>
+</head>
+
+<body class="theme">
+  <noscript>Please enable JavaScript if you want to see my cool effects!</noscript>
+
+  <div class="overlay">
+    <div class="modal theme">
+      <img loading="lazy" src="images/check.svg"
+        alt="A check mark, verifying the form was successfully sent. Author: https://www.iconfinder.com/paomedia. License: http://creativecommons.org/licenses/by/3.0/">
+
+      <h2>Thank You!</h2>
+      <p>Your comments have
+        been sent! Samuel will
+        reach out to you shortly.</p>
+      <button type="button" class="form-button" id="close-modal">OK</button>
+    </div>
+  </div>
+
+  <header>
+    <h1>Samuel Casellas</h1>
+    <button id="hamburger"></button>
+    <div class="theme user-buttons">
+      <nav>
+        <a href="#intro" title="Home" class="active">Home</a>
+        <a href="#projects" title="Projects">Projects</a>
+        <a href="#contact" title="Contact Me">Contact Me</a>
+      </nav>
+      <div id="day-transition-container">
+        <img loading="lazy" id="theme-toggler" src="images/sun.svg" alt="graphical image of a sun" width="75"
+          height="75">
+      </div>
+    </div>
+  </header>
+  <main>
+    <section id="intro">
+      <h2 class="fade-in">Hello world.</h2>
+      <img loading="lazy" class="fade-in" id="hero-img" src="images/hero-img.webp"
+        alt="Samuel Casellas folding his arms with a motivated look.">
+
+      <div class="icons fade-in-2">
+        <figure>
+          <!-- Icon of an html tag to represent code expertise. Attribution to https://www.iconfinder.com/font-awesome with the following license: https://creativecommons.org/licenses/by/4.0/ -->
+          <svg class="icon" id="engineer" height="1792" viewBox="0 0 1792 1792" width="1792" xmlns="http://www.w3.org/2000/svg">
+            <style>
+              .engineering {
+                fill: #000000
+              }
+
+              .dark .engineering {
+                fill: #FFFFFF;
+              }
+            </style>
+            <path class="engineering theme"
+              d="M553 1399l-50 50q-10 10-23 10t-23-10l-466-466q-10-10-10-23t10-23l466-466q10-10 23-10t23 10l50 50q10 10 10 23t-10 23l-393 393 393 393q10 10 10 23t-10 23zm591-1067l-373 1291q-4 13-15.5 19.5t-23.5 2.5l-62-17q-13-4-19.5-15.5t-2.5-24.5l373-1291q4-13 15.5-19.5t23.5-2.5l62 17q13 4 19.5 15.5t2.5 24.5zm657 651l-466 466q-10 10-23 10t-23-10l-50-50q-10-10-10-23t10-23l393-393-393-393q-10-10-10-23t10-23l50-50q10-10 23-10t23 10l466 466q10 10 10 23t-10 23z" />
+          </svg>
+          <figcaption>Software Engineer</figcaption>
+        </figure>
+        <figure>
+          <!-- Icon of a flask to represent quality assurance. Attribution to https://www.iconfinder.com/bogdanrosu -->
+          <svg class="icon" enable-background="new 0 0 64 64" height="64px" id="Layer_1" version="1.1" viewBox="0 0 64 64"
+            width="64px" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <style>
+              .testing {
+                fill: #000000
+              }
+
+              .dark .testing {
+                fill: #FFFFFF;
+              }
+            </style>
+            <path class="testing theme"
+              d="M50.504,47.673L37.88,24.027V12.021h1.249c0.553,0,1-0.447,1-1V9c0-0.552-0.447-1-1-1H37.88H25.041h-1.143  c-0.553,0-1,0.448-1,1v2.021c0,0.553,0.447,1,1,1h1.143v12.007L13.421,47.57C10.45,52.226,12.519,56,18.041,56h28  C51.563,56,53.561,52.272,50.504,47.673z M28.628,25.798l0.413-0.837v-0.933V12.021h4.839v12.007v1.001l0.471,0.883l5.41,10.132  h-16.19L28.628,25.798z" />
+          </svg>
+
+          <figcaption>QA Tester</figcaption>
+        </figure>
+        <figure>
+          <!-- Icon of a lightbulb to represent business ideas. Attribution to https://www.iconfinder.com/Kashif-Arif -->
+          <svg class="icon" id="entrepreneur" style="enable-background:new 0 0 24 24;" version="1.1"
+            viewBox="0 0 24 24" xml:space="preserve" xmlns="http://www.w3.org/2000/svg"
+            xmlns:xlink="http://www.w3.org/1999/xlink">
+            <style type="text/css">
+              .st0 {
+                fill: none;
+                stroke: #000000;
+                stroke-width: 1.5;
+                stroke-linecap: round;
+                stroke-linejoin: round;
+                stroke-miterlimit: 10;
+              }
+
+              .fill {
+                fill: #000000
+              }
+
+              .dark .color {
+                stroke: #FFFFFF
+              }
+
+              .dark .fill {
+                fill: #FFFFFF
+              }
+            </style>
+            <g>
+              <g>
+                <g>
+                  <path class="theme st0 color lightbulb"
+                    d="M9.2,17.8C8.9,16,8.1,14.3,6.8,13c-1.3-1.3-2.1-3.1-2.1-5c0-4.3,3.7-7.6,8-7.2c3.3,0.3,5.9,3,6.4,6.2     c0.3,2.2-0.4,4.3-1.8,5.8c-1.3,1.4-2.2,3.1-2.6,5" />
+                </g>
+                <g>
+                  <path class="theme fill" d="M9.7,22.3c0.3,1,1.2,1.7,2.3,1.7s2-0.7,2.3-1.7H9.7z" />
+                </g>
+                <g>
+                  <path class="theme st0 color"
+                    d="M15.3,22H8.7C8.3,22,8,21.7,8,21.3v-2.7c0-0.4,0.3-0.7,0.7-0.7h6.5c0.4,0,0.7,0.3,0.7,0.7v2.7     C16,21.7,15.7,22,15.3,22z" />
+                </g>
+              </g>
+
+              <g>
+                <line class="theme st0 color" x1="12" x2="12" y1="17.8" y2="9.9" />
+              </g>
+              <g>
+                <polyline class="theme st0 color" points="9.1,9.9 10.6,8.5 12,9.9 13.4,8.5 14.9,9.9   " />
+              </g>
+            </g>
+          </svg>
+          <figcaption>Entrepreneur</figcaption>
+        </figure>
+      </div>
+    </section>
+
+    <section class="fade-in" id="summary">
+      <div class="card">
+        <h2>Executive Summary</h2>
+        <p>Software and quality assurance engineer with 1 year of professional experience developing software under
+          principles of
+          DevSecOps, Agile, and Quality Control, and 4+ years of individual learning. Scrutinized HTTP microservices &
+          Oracle database
+          components with 15 engineers and product managers with keen precision to detail, documentation, and team
+          communication.</p>
+      </div>
+      <div class="card">
+        <h2>Background Info</h2>
+        <p>Currently enrolled as a Software Engineering at Brigham Young University - Idaho. Worked for The Church of Jesus Christ of Latter-Day Saints for 8 months in my internship. Looking to make a startup with the intent to become a key innovator in the trveling industry. I am looking for any new opportunities to work and am happy to seek out the novel in the world of programming!</p>
+      </div>
+    </section>
+
+    <hr class="fade-in">
+
+    <section class="fade-in" id="projects">
+      <h2>Projects</h2>
+      <div class="grid">
+        <!-- Added with JS -->
+      </div>
+    </section>
+
+    <hr class="fade-in">
+
+    <section id="contact">
+      <h2 class="fade-in">Contact Me</h2>
+
+      <form id="myForm" class="fade-in" method="get">
+        <label class="label-header" for="visitor-name">Name *</label>
+        <input name="name" type="text" id="visitor-name" required>
+
+        <label class="label-header" for="company-name">Company</label>
+        <input name="company" type="text" id="company-name">
+
+        <label class="label-header" for="visitor-email">Email</label>
+        <input name="email" type="email" id="visitor-email">
+
+        <label class="label-header" for="inquiry">Inquiry *</label>
+        <textarea id="inquiry" name="inquiry" required></textarea>
+
+        <br>
+        <!-- <input type="submit" id="submit-form" value="Send"> -->
+        <button type="submit" class="form-button">Submit</button>
+      </form>
+    </section>
+  </main>
+  <footer>
+    <a href="https://www.linkedin.com/in/samuel-casellas/" target="_blank" rel="noopener noreferrer">LinkedIn</a>
+    <a href="https://github.com/SamuelCasellas" target="_blank" rel="noopener noreferrer">GitHub</a>
+    <!-- <a href="" target="_blank" rel="noopener noreferrer">X</a> -->
+  </footer>
+
+  <!-- <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script> -->
+
+</body>
+
+</html>
