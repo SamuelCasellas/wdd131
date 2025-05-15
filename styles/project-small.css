@@ -1,0 +1,75 @@
+@import url('project-vars.css');
+
+@media (max-width: 42em) {
+  #summary {
+    display: block;
+    margin: 0 auto;
+    width: 80%;
+    max-width: 90%;
+  }
+
+  #summary>.card {
+    width: 100%;
+    margin-right: 0;
+    border-right: 1px solid rgb(92, 92, 92) !important;
+    border-radius: 15px !important;
+  }
+
+  .card {
+    display: block;
+    min-width: 50%;
+    margin: 1rem auto;
+  }
+
+  .card>figure {
+    margin: 0 auto;
+    min-width: 200px !important;
+    max-width: 6rem;
+    width: 50%;
+    height: auto;
+  }
+
+  .card>figure>img {
+    margin: 0 auto;
+    height: 150px;
+    width: auto;
+  }
+}
+
+@media (max-width: 38.5em) {
+  .user-buttons {
+    padding-top: 1em;
+    text-align: left;
+    position: fixed;
+    top: 0;
+    right: -250px;
+    width: 250px;
+    height: 100%;
+    background-color: var(--side-bar-color);
+    transition: right 0.3s ease-in-out;
+    z-index: 1;
+    border-left: 1px gray solid;
+  }
+
+  nav>a {
+    display: block;
+    max-width: 60%;
+  }
+
+  .user-buttons.open {
+    right: 0;
+  }
+  
+  .icon {
+    max-width: 100px;
+  }
+
+  main {
+    display: block;
+  }
+
+  .form-button {
+    margin: 0 auto !important;
+  }
+
+}
